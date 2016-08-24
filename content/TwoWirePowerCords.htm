@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no">
+<link href="scripts/css.css" rel="stylesheet" type="text/css">
+<title>PMEL</title>
+<script type="text/javascript"> 
+var isReady=false;
+var statVal=""
+var intID;
+function doReady() {
+	isReady=true;
+}
+function doStatus(value) {
+	statVal=value;
+}
+function doFirst(value) {
+	clearTimeout(intID);
+	if (! isReady) {
+		intID=setTimeout("doFirst()",250);
+	} else {
+		sendToFlash(String(window.dialogArguments));
+	}
+}
+function sendToFlash(value) {
+	document.getElementById("swf").sendToFlash(value);
+}
+function doLast(){
+	window.returnValue = statVal;
+}
+</script>
+</head>
+<body onload="doFirst();" onunload="doLast();">
+<div class="content"
+  <div id="flashDiv">
+    <object data="TwoWirePowerCords.swf" width="100%" height="100%" type="application/x-shockwave-flash" id="swf">
+      <param name="quality" value="high">
+      <param name="movie" value="PC_Build_01.swf">
+      <param name="allowscriptaccess" value="always">
+      <param name="allownetworking" value="all">
+      <param name="scale" value="showAll">
+      <param name="allowfullscreen" value="true">
+      <param name="menu" value="false">
+      <param name="bgcolor" value="#FFFFFF">
+    </object>
+  </div>
+</div>
+</body>
+</html>

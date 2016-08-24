@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PMEL</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="imagetoolbar" content="no">
+<link href="scripts/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="scripts/swfobject.js"></script>
+<script type="text/javascript"> 
+var modFile="main";
+var isReady=false;
+var intID;
+var flashvars={};
+var params={};
+params.allowscriptaccess="always";
+params.allownetworking="all";
+params.scale="showAll";
+params.bgcolor = "5b5f6b";
+var attributes={};
+attributes.id=modFile;
+var mySWF=attributes.id+".swf";
+swfobject.embedSWF(mySWF, "flashDiv", "100%", "100%", "10.3", false, flashvars, params, attributes);
+function flashMovie(movieName) {
+	if (window.document[movieName]) {
+		return window.document[movieName];
+	} else {
+		return document.getElementById(movieName);
+	}
+}
+function doReady() {
+	isReady=true;
+}
+function sendToFlash(value) {
+	flashMovie(attributes.id).sendToFlash(value);
+}
+function doModal(value){
+	var args = new Array();
+	args[0] = value[0];
+	args[1] = value[1];
+	var url = value[2];
+	var wname = value[3];
+	var params = "dialogWidth:"+value[4]+"px; dialogHeight:"+value[5]+"px; "+value[6];
+	var popVal = showModalDialog(url,args,params);
+	flashMovie(attributes.id).focus();
+	sendToFlash([args[0],popVal])
+}
+-->
+</SCRIPT>
+</head>
+<body>
+<div class="content">
+  <div id="flashDiv">
+    <div id="info">
+      <p id="imp">Requires Flash Player 10.3 or greater.</p>
+      <p> </p>
+      <p>If this courseware does NOT meet your accessibility needs, please contact us:<br />
+        POINT OF CONTACT:<br />
+        SECTION CHIEF, 81TRSS/TSUI<br />
+        DSN 597-1720, COMM (228)-377-1720<br />
+        POC EMAIL:<br />
+        81TRSS.imi@us.af.mil<br />
+        CORRESPONDENCE:<br />
+        81TRSS/TSUI<br />
+        601 D Street<br />
+        KEESLER AFB, MS 39534-2229</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

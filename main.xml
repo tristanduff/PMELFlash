@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<main>
+	<story path="content/" it="g">
+		<what>ONE</what>
+		<tiny>SingleWirePowerCords.png</tiny>
+		<full>SingleWirePowerCords.htm</full>
+		<wide>960</wide>
+		<tall>600</tall>
+		<options center="yes" resizable="no" status="no" />
+	</story>
+
+	<story path="content/" it="g">
+		<what>TWO</what>
+		<tiny>TwoWirePowerCords.png</tiny>
+		<full>TwoWirePowerCords.htm</full>
+		<wide>960</wide>
+		<tall>600</tall>
+		<options center="yes" resizable="no" status="no" />
+	</story>
+
+	<story path="content/" it="g">
+		<what>THREE</what>
+		<tiny>InherentlySafe.png</tiny>
+		<full>InherentlySafe.htm</full>
+		<wide>960</wide>
+		<tall>600</tall>
+		<options center="yes" resizable="no" status="no" />
+	</story>
+</main>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<title>PROGRAM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="imagetoolbar" content="no">
+<link href="scripts/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="scripts/swfobject_modified.js"></script>
+<script type="text/javascript"> 
+var modFile="InherentlySafe";
+var isReady=false;
+var statVal=""
+var intID;
+var flashvars={};
+var params={};
+params.allowscriptaccess="always";
+params.allownetworking="all";
+params.scale="noScale" //"showAll";
+params.bgcolor = "000000";
+params.wmode = "transparent";
+var attributes={};
+attributes.id=modFile;
+var mySWF=attributes.id+".swf";
+swfobject.embedSWF(mySWF, "flashDiv", "100%", "100%", "10.3", false, flashvars, params, attributes);
+function flashMovie(movieName) {
+	if (window.document[movieName]) {
+		return window.document[movieName];
+	} else {
+		return document.getElementById(movieName);
+	}
+}
+function doReady() {
+	isReady=true;
+}
+function doStatus(value) {
+	statVal=value;
+}
+function doFirst(value) {
+	clearTimeout(intID);
+	if (! isReady) {
+		intID=setTimeout("doFirst()",250);
+	} else {
+		sendToFlash(String(window.dialogArguments));
+	}
+}
+function sendToFlash(value) {
+	flashMovie(attributes.id).sendToFlash(value);
+}
+function doLast(){
+	window.returnValue = statVal;
+}
+</script>
+</head>
+<body onload="doFirst();" onunload="doLast();">
+<div class="content">
+  <div id="flashDiv">
+    <div id="info">
+      <p id="imp">Requires Flash Player 10.3 or greater.</p>
+      <p> </p>
+      <p>If this courseware does NOT meet your accessibility needs, please contact us:<br />
+        POINT OF CONTACT:<br />
+        SECTION CHIEF, 81TRSS/TSUI<br />
+        DSN 597-1720, COMM (228)-377-1720<br />
+        POC EMAIL:<br />
+        81TRSS.imi@us.af.mil<br />
+        CORRESPONDENCE:<br />
+        81TRSS/TSUI<br />
+        601 D Street<br />
+        KEESLER AFB, MS 39534-2229</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
